@@ -37,4 +37,5 @@ echo "=========================="
 
 #Starting Install of ChPM Chapel Package Manager
 echo "Starting ChPM Installation"
+mkdir bin
 chapel-code/bin/*/chpl src/*.chpl -o bin/ChPM

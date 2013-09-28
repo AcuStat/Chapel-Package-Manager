@@ -1,9 +1,14 @@
-MindStack
+Chapel Package Manager (ChPM)
 =========
+Currently Pre-Alpha
 
-Data Mining application in Chapel
+This repo is designed to help search code written in Chapel
+- Supported OS is Linux
 
-- Goal of this Application is to build an Open Source Data Mining engine with prebuilt algorithms for data follow
+Install
+=======================
+./setup.sh
+
 
 Setup for Chapel Compile
 ========================
