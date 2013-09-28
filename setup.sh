@@ -18,15 +18,23 @@ if [ $APT ]; then
     sudo apt-get install subversion gcc make
 fi
 
-echo "Fetching latest version of Chapel Development"
-svn checkout svn://svn.code.sf.net/p/chapel/code/trunk chapel-code
-cd chapel-code
+if [ -d 'chapel-code' ];  then
+    echo "Chapel is already installed going to update svn"
+    cd chapel-code
+    svn update
+else
+    echo "Fetching latest version of Chapel Development"
+    svn checkout svn://svn.code.sf.net/p/chapel/code/trunk chapel-code
+    cd chapel-code
+fi
+
 echo "Running chapel for installation"
-./configure
 make
 echo "Chapel has been installed"
 ./bin/*/chpl --version
+cd ..
 echo "=========================="
 
 #Starting Install of ChPM Chapel Package Manager
 echo "Starting ChPM Installation"
+chapel-code/bin/*/chpl src/*.chpl -o bin/ChPM

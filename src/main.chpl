@@ -1,19 +1,20 @@
 /**
- MindStack Data Engine
+ Chapel Package Manager
 
- By: AcuStat.org
+ Provided By: AcuStat.org
 
  DateChanged: 092813
 **/
 
-module MindStack {
+module ChPM {
     use engine;
 
     proc main() {
-        writeln('AcuStat - MindStack');
+        writeln('Chapel Package Manager (ChPM)');
         writeln('-------------------');
         writeln('Version: 0.01 Alpha');
-        writeln('');
+        writeln('Released: 09/28/13');
+        writeln('========================');
         writeln('Program Options:');
         writeln('L - Load in Data File');
         writeln('S - Summary of Data');
