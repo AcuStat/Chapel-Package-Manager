@@ -17,6 +17,22 @@ module engine {
             writeln("AE > ");
             stdin.read(command);
 
+            writeln("&&&&&&&&&&&&&&");
+            use Regexp;
+            writeln("Search 3");
+            {
+              var r = compile("(t)[a-z]+");
+
+              var str = " test ";
+              var cap:reMatch;
+              var match = r.search(str, cap);
+
+              writeln(match);
+              writeln(cap);
+
+              writeln(str.substring(match));
+            }
+
             writeln("---------------");
             writeln(command);
         }

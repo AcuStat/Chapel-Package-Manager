@@ -10,12 +10,12 @@ APT=`which apt-get`
 
 if [ $YUM ]; then
     echo "Running yum based package manager"
-    sudo yum install subversion gcc make
+    sudo yum -y install subversion gcc make mercurial
 fi
 
 if [ $APT ]; then
     echo "Running apt-get based  package manager"
-    sudo apt-get install subversion gcc make
+    sudo apt-get -y install subversion gcc make mercurial
 fi
 
 if [ -d 'chapel-code' ];  then
@@ -28,8 +28,14 @@ else
     cd chapel-code
 fi
 
+echo "Setting up Chapel Enviorment Variables"
+export CHPL_LLVM=llvm
+export CHPL_TASKS=massivethreads
+export CHPL_REGEXP=re2
+
 echo "Running chapel for installation"
 make
+
 echo "Chapel has been installed"
 ./bin/*/chpl --version
 cd ..
